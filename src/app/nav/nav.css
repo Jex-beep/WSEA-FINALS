@@ -1,9 +1,11 @@
 .navbar {
+  border-bottom: 4px solid #e30613; /* Adjust 4px to your preferred thickness */
+    width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px; /* Balanced padding */
-  background-color: rgba(0, 0, 0, 0.95); /* Slightly transparent for a modern look */
+  background-color: black; /* Slightly transparent for a modern look */
   backdrop-filter: blur(10px); /* Blur effect if there's content behind it */
   height: 90px;
   width: 100%;

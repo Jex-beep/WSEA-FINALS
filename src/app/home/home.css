@@ -1,0 +1,369 @@
+/* 1. Eliminate all gaps */
+.main-content-wrapper {
+  background-color: white; /* Set to black to match the image */
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* 2. Maximize Hero Space */
+.hero-section {
+  background-color: #000000;
+  min-height: 90vh; /* Takes up most of the screen height */
+  display: flex;
+  align-items: center;
+  padding: 0; /* Remove padding to touch the edges */
+  margin: 0;
+  position: relative;
+}
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px; /* Limits width on huge screens but stays centered */
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%; /* Side padding only */
+  
+}
+
+/* 3. Ample space for text */
+.hero-text-box {
+  flex: 0 0 45%; /* Text takes exactly 45% of width */
+  padding-right: 50px; /* Extra breathing room between text and car */
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Scales based on screen size */
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.text-accent {
+  color: #e30613; /* Vibrant red from your design */
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: #cccccc;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* 4. Visual Handling */
+.hero-visual {
+  flex: 0 0 55%; /* Car takes the other 55% */
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-car {
+  width: 120%; /* Makes car slightly overflow for that "large" look */
+  height: auto;
+  z-index: 2;
+  /* Removes transform to prevent weird horizontal scrollbars */
+}
+
+.red-circle-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 0, 0, 0.6) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Global Button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #8b0000;
+  color: #ffffff;
+  padding: 15px 45px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+    border: 2px solid black;
+  background:#8b0000;
+  color: white;
+}
+
+/* Featured Vehicles */
+.featured-vehicles {
+    color: #8b0000;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.featured-vehicles h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5%;
+}
+
+.featured-title {
+  color: #8b0000; 
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.vehicle-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.category-card {
+    font-weight: bold;
+  border: 1.5px solid #333333;
+  padding: 20px;
+  width: 110px;
+  border-radius: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+    color: #e30613;
+  border-color: #8b0000;
+  background: #111111;
+}
+
+.cat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.cat-label {
+  display: block;
+  font-size: 0.8rem;
+}
+
+/* Info Banner */
+
+.info-banner {
+  height: 300px;
+  position: relative; /* Required for the absolute image inside */
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps image from stretching */
+  z-index: 1; /* Sits at the bottom */
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 2; /* Sits on top of the image */
+  background: rgba(0, 0, 0, 0.75); /* Dark tint to match your design */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.banner-text {
+  color: #e0e0e0;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-outline-small {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-outline-small:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Services */
+.services-section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section-title {
+  color: #8b0000;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.service-item {
+  flex: 1;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #8b0000;
+  margin-bottom: 15px;
+}
+
+.service-name {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.service-description {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Container for the 2x2 grid */
+.inspection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  max-width: 1200px; /* Slightly wider for a premium feel */
+  margin: 0 auto;
+  background-color: #000000; /* Matches dark luxury theme */
+}
+
+/* This is the master rule that keeps every box the same size */
+.inspection-card {
+  height: 450px; /* Rigid height for all boxes */
+  width: 100%;
+  overflow: hidden; /* Prevents text from pushing the box larger */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Card specific styling */
+.img-card img {
+  width: 100%;
+  height: 100%; /* Fills the 450px height */
+  object-fit: cover; /* Crops image to fill without stretching */
+  display: block;
+}
+
+/* Text Card specific styling */
+.text-card {
+  padding: 60px; /* Generous padding for luxury look */
+  box-sizing: border-box; /* Ensures padding doesn't add to the 450px height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers text vertically */
+  background-color: #1a0000; /* Deep red/black base */
+  background: linear-gradient(135deg, #4a0000 0%, #000000 100%);
+}
+
+/* Background for the red gradient text box */
+.text-card.accent-bg {
+  background: linear-gradient(135deg, #8b0000 0%, #330000 100%);
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.learn-more-link {
+  color: #ffffff; /* White text */
+  text-decoration: none; /* Remove default underline */
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid #8b0000; /* Dark red thick underline */
+  padding-bottom: 4px;
+
+  /* idk */
+  text-decoration: none !important; /* Removes standard link underline */
+  border-bottom: none !important;
+}
+
+/* 2. Style the arrow if you have one in the HTML */
+.learn-more-link .arrow {
+  margin-left: 8px;
+  transition: transform 0.3s ease; /* Makes the arrow move */
+}
+
+/* 3. Hover Effects */
+.learn-more-link:hover {
+  color: #e30613; /* Text turns red on hover */
+  border-bottom-color: #ffffff; /* Underline turns white */
+
+  /* idk */
+  text-decoration: none;
+  border-bottom: none;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-car {
+    width: 100%;
+    transform: none;
+  }
+  .services-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+.inspection-grid {
+    grid-template-columns: 1fr; /* Stacks vertically */
+  }
+  .inspection-card {
+    height: 400px; /* Slightly shorter on mobile */
+  }
+}
