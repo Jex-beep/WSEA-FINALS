@@ -1,11 +1,87 @@
 <app-nav></app-nav>
-<p>products works!</p>
 
+<section class="products-page">
+  <div class="header-banner">
+    <h1>WE OFFER</h1>
+  </div>
 
+  <div class="filter-container">
+    <div class="category-filters">
+      <button class="filter-btn active">All vehicles</button>
+      
+      <button class="filter-btn">
+        <img src="/sedan.png" alt="Sedan" class="btn-icon"> Sedan
+      </button>
+      
+      <button class="filter-btn">
+        <img src="/pickup.png" alt="Pickup" class="btn-icon"> Pickup
+      </button>
+      
+      <button class="filter-btn">
+        <img src="/coupe.png" alt="Coupe" class="btn-icon"> Coupe
+      </button>
+      
+      <button class="filter-btn">
+        <img src="/suv.png" alt="SUV" class="btn-icon"> Suv
+      </button>
+      
+      <button class="filter-btn">
+        <img src="/micro.png" alt="Micro" class="btn-icon"> Micro
+      </button>
+    </div>
+  </div>
 
+  <div class="product-grid">
+    @for (car of availableCars; track car.id) {
+      <div class="car-card">
+        <div class="image-container">
+          <img [src]="car.image" [alt]="car.make + ' ' + car.model">
+        </div>
+        <div class="car-info">
+          <div class="title-row">
+            <h3>{{ car.make }}</h3>
+            <span class="price">{{ car.price }}</span>
+          </div>
+          <p class="car-type">{{ car.type }}</p>
+          <button class="view-details">View Details</button>
+        </div>
+      </div>
+    }
+  </div>
 
+  <div class="brand-logos">
+    <img src="/toyota.png" alt="Toyota">
+    <img src="/hyundai.png" alt="Hyundai">
+    <img src="/ford.png" alt="Ford">
+    <img src="/honda.png" alt="Honda">
+    <img src="/bmw.png" alt="BMW">
+  </div>
+</section>
 
+<div class="contact-banner">
+  <div class="contact-content">
+    <div class="text-side">
+      <h2>Ready to Find Your Car?</h2>
+      <h1>Contact Us Today!</h1>
+      
+      <div class="benefit-bar">
+        <span>✓ Quality Inspected</span>
+        <span>✓ Best Price</span>
+        <span>✓ Fast Approval</span>
+      </div>
 
+      <p class="phone-number">+999-999-0659</p>
+      <p class="description">
+        Visit our yard in Mabalacat City for a test drive today! 
+        We ensure every vehicle meets M&J standards.
+      </p>
+      <button class="contact-btn">Contact the Owner</button>
+    </div>
 
+    <div class="image-side">
+      <img src="/bluecar.png" alt="Featured Blue Car" class="cta-car">
+    </div>
+  </div>
+</div>
 
-<!-- <app-footer></app-footer>         alisin tong comment para lumitaw yung footer -->
+<app-footer></app-footer>
