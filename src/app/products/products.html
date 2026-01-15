@@ -53,14 +53,20 @@
         </div>
         <div class="car-info">
           <div class="title-row">
-            <h3>{{ car.make }}</h3>
+            <div>
+              <h3>{{ car.make }}</h3>
+              <p class="car-year" style="margin: 0; font-size: 0.9rem; color: #666;">{{ car.year }}</p>
+            </div>
             <span class="price">{{ car.price }}</span>
           </div>
           <p class="car-type">{{ car.type }}</p>
-          <button class="view-details">View Details</button>
+          
+          <button class="view-details" [routerLink]="['/products', car.id]">
+            View Details
+          </button>
         </div>
       </div>
-    } @empty {
+    } @empty { 
       <div class="no-results">
         <p>Currently no {{ selectedCategory }}s available. Please check back later!</p>
       </div>

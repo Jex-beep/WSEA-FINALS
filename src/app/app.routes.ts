@@ -5,6 +5,7 @@ import { Products } from './products/products';
 import { Blog } from './blog/blog';
 import { Contact } from './contact/contact';
 import { Error } from './error/error';
+import { ProductDetail } from './products/product-detail/product-detail';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,10 @@ export const routes: Routes = [
     {
         path: 'products',
         component: Products
+    },
+    {
+        path: 'products/:id',
+        component: ProductDetail
     },
     {
         path: 'blog',
