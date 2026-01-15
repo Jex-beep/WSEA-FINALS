@@ -100,83 +100,121 @@
   color: white;
 }
 
-/* Featured Vehicles */
+/* Container padding and background */
 .featured-vehicles {
-    color: #8b0000;
+  padding: 100px 5%;
+  background-color: #ffffff;
   text-align: center;
-  padding: 60px 0;
 }
 
-.featured-vehicles h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2.5%;
-}
-
-.featured-title {
-  color: #8b0000; 
+/* Big Section Title (Featured and Services */
+.section-title {
+  border: #000 3px solid;
+  color: #8b0000;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 auto 60px auto;
+  padding: 0;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  letter-spacing: 2px;
-  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
+/* The Grid Layout */
 .vehicle-grid {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+  gap: 25px; /* Spacing between cards */
+  flex-wrap: wrap; /* Wraps icons on smaller screens */
 }
 
 
 .category-card {
-    font-weight: bold;
-  border: 1.5px solid #333333;
-  padding: 20px;
-  width: 110px;
-  border-radius: 4px;
-  transition: 0.3s;
+  width: 180px;         /* Desktop fixed width */
+  height: 180px;        /* Desktop fixed height */
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  
+  /* Layout Logic */
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: center; /* Centers items vertically */
+  align-items: center;     /* Centers items horizontally */
+  
   cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 15px;           /* Prevents text from hitting the edges */
 }
 
-.category-card:hover {
-    color: #e30613;
-  border-color: #8b0000;
-  background: #111111;
-}
-
+/* The Car Icon */
 .cat-icon {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  width: 80px;             /* Fixed width for the icon */
+  height: auto;
+  margin-bottom: 12px;     /* Space between car and text */
+  transition: transform 0.3s ease;
 }
 
+/* The New Text Style */
 .cat-label {
-  display: block;
-  font-size: 0.8rem;
+  color: #333333;          /* Professional dark grey */
+  font-size: 1rem;
+  font-weight: 700;        /* Bold to match your headers */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover Effects */
+.category-card:hover {
+  border-color: #8b0000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.category-card:hover .cat-label {
+  color: #8b0000;          /* Text turns red on hover */
+}
+
+.category-card:hover .cat-icon {
+  transform: scale(1.1);
 }
 
 /* Info Banner */
 
+/* 1. The Container "Window" */
 .info-banner {
-  height: 300px;
-  position: relative; /* Required for the absolute image inside */
+  height: 800px; /* Locked height to match the grid boxes */
+  position: relative;
   width: 100%;
-  overflow: hidden;
-  display: block;
+  overflow: hidden; /* This crops the moving image */
+  margin: 0; 
+  padding: 0;
+  background-color: #000; /* Fallback for gaps */
 }
 
+/* 2. The Panning Image (No-JS Parallax) */
 .banner-img {
   position: absolute;
-  top: 0;
+  top: -10%; /* Starts slightly higher to allow room to move */
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Keeps image from stretching */
-  z-index: 1; /* Sits at the bottom */
+  height: 120%; /* Taller than the container to allow for the pan */
+  object-fit: cover; /* Prevents stretching */
+  z-index: 1;
+
+  /* The Pure CSS Pan Logic */
+  /* This moves the image slightly when the parent section is scrolled */
+  transform: translateY(var(--scroll-pan, 0)); 
+  transition: transform 0.1s ease-out;
 }
 
+/* 3. The Overlay (Matching your reference image) */
 .banner-overlay {
   position: relative;
-  z-index: 2; /* Sits on top of the image */
-  background: rgba(0, 0, 0, 0.75); /* Dark tint to match your design */
+  z-index: 2;
+  /* Dark overlay to make white text readable */
+  background: rgba(0, 0, 0, 0.7); 
   height: 100%;
   width: 100%;
   display: flex;
@@ -187,43 +225,55 @@
 
 .banner-title {
   color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 5px;
+  font-size: 2rem;
+  font-weight: 600;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 .banner-text {
   color: #e0e0e0;
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
 }
 
 .btn-outline-small {
   background: transparent;
-  border: 1px solid #ffffff;
+  border: 2px solid #8b0000;
   color: #ffffff;
   padding: 10px 25px;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
   transition: 0.3s ease;
 }
 
 .btn-outline-small:hover {
-  background: #ffffff;
-  color: #000000;
+  border: 2px solid #000000;
+  background: #8b0000;
+  color: white;
 }
 
-/* Services */
+/* Services Section */
 .services-section {
+  background-color: #ffffff; /* Explicitly set background to white */
   padding: 80px 10%;
   text-align: center;
 }
 
 .section-title {
-  color: #8b0000;
-  margin-bottom: 50px;
+  display: inline-block;
+  border: #000 3px solid ;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  color: #8b0000; 
+
+  margin: 0 auto 50px auto;
+  padding: 20px 40px;
+
   font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .services-grid {
@@ -236,112 +286,106 @@
   flex: 1;
 }
 
-.service-icon {
-  font-size: 2.5rem;
+/* Style the <h4> tags */
+.service-item h4 {
   color: #8b0000;
-  margin-bottom: 15px;
-}
-
-.service-name {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.service-description {
-  color: #aaaaaa;
-  font-size: 0.9rem;
+.service-item p {
+  color: #8b0000;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Container for the 2x2 grid */
+
+.service-img-icon {
+  width: 60px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+/* Container for Inspection and Services Area */
+
+
+.inspection-section {
+  padding: 100px 0; 
+  background-color: #ffffff; 
+  width: 100%;
+}
+
+/* 2. The Grid - Removing border and gaps */
 .inspection-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  max-width: 1200px; /* Slightly wider for a premium feel */
+  grid-template-columns: 1fr 1fr; 
+  max-width: 1200px; 
   margin: 0 auto;
-  background-color: #000000; /* Matches dark luxury theme */
+  background-color: #000000; 
+  /* Force removal of any tiny gaps between cards */
+  gap: 0; 
+  border: none; 
+  outline: none;
+  /* Adds a smooth rounded look to the whole block without showing a border line */
+  border-radius: 12px;
+  overflow: hidden; 
 }
 
-/* This is the master rule that keeps every box the same size */
+/* 3. The Cards - Setting display to block prevents tiny 1px bottom gaps */
 .inspection-card {
-  height: 450px; /* Rigid height for all boxes */
+  height: 450px;
   width: 100%;
-  overflow: hidden; /* Prevents text from pushing the box larger */
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
+  border: none; /* Ensure no borders here */
 }
 
-/* Image Card specific styling */
-.img-card img {
-  width: 100%;
-  height: 100%; /* Fills the 450px height */
-  object-fit: cover; /* Crops image to fill without stretching */
-  display: block;
-}
-
-/* Text Card specific styling */
+/* 4. Text Card - Centering your titles and paragraphs */
 .text-card {
-  padding: 60px; /* Generous padding for luxury look */
-  box-sizing: border-box; /* Ensures padding doesn't add to the 450px height */
+  padding: 60px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers text vertically */
-  background-color: #1a0000; /* Deep red/black base */
+  justify-content: center;
   background: linear-gradient(135deg, #4a0000 0%, #000000 100%);
+  border: none;
 }
 
-/* Background for the red gradient text box */
+/* Red Accent Card */
 .text-card.accent-bg {
   background: linear-gradient(135deg, #8b0000 0%, #330000 100%);
 }
 
-.card-title {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.card-text {
-  color: #cccccc;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
+/* 5. Fixed Learn More Link (Cleaning up the "idk" borders) */
 .learn-more-link {
-  color: #ffffff; /* White text */
-  text-decoration: none; /* Remove default underline */
+  color: #ffffff;
+  text-decoration: none; 
   font-weight: 700;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-flex;
   align-items: center;
-  position: relative;
+  width: fit-content;
   transition: color 0.3s ease;
-  border-bottom: 2px solid #8b0000; /* Dark red thick underline */
-  padding-bottom: 4px;
-
-  /* idk */
-  text-decoration: none !important; /* Removes standard link underline */
-  border-bottom: none !important;
+  /* Removed border-bottom and important tags for a cleaner look */
 }
 
-/* 2. Style the arrow if you have one in the HTML */
 .learn-more-link .arrow {
   margin-left: 8px;
-  transition: transform 0.3s ease; /* Makes the arrow move */
+  transition: transform 0.3s ease;
 }
 
-/* 3. Hover Effects */
 .learn-more-link:hover {
-  color: #e30613; /* Text turns red on hover */
-  border-bottom-color: #ffffff; /* Underline turns white */
+  color: #e30613; 
+}
 
-  /* idk */
-  text-decoration: none;
-  border-bottom: none;
+.learn-more-link:hover .arrow {
+  transform: translateX(5px);
 }
 
 

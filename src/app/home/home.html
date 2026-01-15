@@ -1,4 +1,5 @@
 <app-nav></app-nav>
+
 <div class="main-content-wrapper">
   
   <section class="hero-section">
@@ -6,7 +7,7 @@
       <div class="hero-text-box">
         <h1 class="hero-title">WHERE QUALITY MEETS <br><span class="text-accent">AFFORDABILITY</span></h1>
         <p class="hero-subtitle">M & J Quality Used Cars</p>
-        <button class="btn-outline">Read More</button>
+        <button class="btn-outline-small" routerLink="about">Learn More</button>
       </div>
       
       <div class="hero-visual">
@@ -16,45 +17,70 @@
     </div>  
   </section>
 
-
   <section class="featured-vehicles">
-    <h2>FEATURED VEHICLES</h2>
+    <h2 class="section-title">FEATURED VEHICLES</h2>
+    
     <div class="vehicle-grid">
-      <div class="category-card"><i class="icon-sedan"></i><span>Sedan</span></div>
-      <div class="category-card"><i class="icon-pickup"></i><span>Pick-Up</span></div>
-      <div class="category-card"><i class="icon-coupe"></i><span>Coupe</span></div>
-      <div class="category-card"><i class="icon-suv"></i><span>SUV</span></div>
-      <div class="category-card"><i class="icon-micro"></i><span>Micro</span></div>
+      <div class="category-card">
+        <img src="/sedan-car-icon.png" alt="Sedan" class="cat-icon">
+        <span class="cat-label">Sedan</span>
+      </div>
+
+      <div class="category-card">
+        <img src="/pickup-truck-icon.png" alt="Pick-Up" class="cat-icon">
+        <span class="cat-label">Pick-Up</span>
+      </div>
+
+      <div class="category-card">
+        <img src="/coupe-car-icon.png" alt="Coupe" class="cat-icon">
+        <span class="cat-label">Coupe</span>
+      </div>
+
+      <div class="category-card">
+        <img src="/suv-car-icon.png" alt="SUV" class="cat-icon">
+        <span class="cat-label">SUV</span>
+      </div>
+
+      <div class="category-card">
+        <img src="/micro-car-icon.png" alt="Micro" class="cat-icon">
+        <span class="cat-label">Micro</span>
+      </div>
     </div>
   </section>
 
-    <section class="info-banner">
+  <section class="info-banner">
     <img src="/dark-background-gray-car.jpg" alt="Banner Background" class="banner-img">
-    
     <div class="banner-overlay">
-        <div class="banner-content">
+      <div class="banner-content">
         <h3 class="banner-title">YOUR NEXT CAR STARTS HERE</h3>
         <p class="banner-text">QUALITY SECOND-HAND CARS, INSPECTED AND READY TO DRIVE.</p>
-        <button class="btn-outline-small">Learn More</button>
-        </div>
-    </div>
-    </section>
+        <button class="btn-outline-small" routerLink="/about">Learn More</button>
+      </div> </div>
+  </section>
 
   <section class="services-section">
     <h2 class="section-title">OUR SERVICES</h2>
     <div class="services-grid">
       <div class="service-item">
-        <div class="service-icon">📍</div>
+        <div class="service-icon-container">
+          <img src="/availability-icon.png" alt="Availability Icon" class="service-img-icon">
+        </div>
         <h4>Availability</h4>
         <p>Diam tincidunt tincidunt erat at semper fermentum. Id ultricies quis.</p>
       </div>
+
       <div class="service-item">
-        <div class="service-icon">🚗</div>
+        <div class="service-icon-container">
+          <img src="/comfort-icon.png" alt="Comfort Icon" class="service-img-icon">
+        </div>
         <h4>Comfort</h4>
         <p>Gravida auctor fermentum morbi vulputate ac egestas cras elementum convallis.</p>
       </div>
+
       <div class="service-item">
-        <div class="service-icon">💰</div>
+        <div class="service-icon-container">
+          <img src="/savings-icon.png" alt="Savings Icon" class="service-img-icon">
+        </div>
         <h4>Savings</h4>
         <p>Pretium convallis id diam sed commodo vestibulum lobortis volutpat.</p>
       </div>
@@ -62,32 +88,34 @@
   </section>
 
   <section class="inspection-section">
-    <div class="inspection-grid">
-      <div class="inspection-card text-card">
-        <h3>Vehicle Component Check</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-        <a href="about" class="learn-more-link">
-  Learn More <span class="arrow">→</span>
-</a>
-      </div>
-      <div class="inspection-card img-card">
-        <img src="/wheel-inspection.png" alt="Wheel Check">
-      </div>
-      <div class="inspection-card img-card">
-        <img src="/engine-inspection.png" alt="Engine Check">
-      </div>
-      <div class="inspection-card text-card accent-bg">
-        <h3>Engine Performance Check</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-        <a href="about" class="learn-more-link">
-  Learn More <span class="arrow">→</span>
-</a>
+    <div class="box-container">
+      <div class="inspection-grid">
+        
+        <div class="inspection-card text-card">
+          <h3>Vehicle Component Check</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a routerLink="/about" class="learn-more-link">
+            Learn More <span class="arrow">→</span>
+          </a>
+        </div>
+        <div class="inspection-card img-card">
+          <img src="/wheel-inspection.png" alt="Wheel Check">
+        </div>
+
+        <div class="inspection-card img-card">
+          <img src="/engine-inspection.png" alt="Engine Check">
+        </div>
+        <div class="inspection-card text-card accent-bg"> <h3>Engine Performance Check</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a routerLink="/about" class="learn-more-link">
+            Learn More <span class="arrow">→</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
 </div>
 
-
-
-<app-footer></app-footer>         
+<app-footer></app-footer>
