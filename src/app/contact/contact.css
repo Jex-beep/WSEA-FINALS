@@ -1,0 +1,219 @@
+/* ================= HEADER BANNER (DO NOT TOUCH) ================= */
+.header-banner {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 100px;
+  border-bottom-left-radius: 50% 100px;
+  border-bottom-right-radius: 50% 100px;
+  margin-bottom: 0;
+}
+
+.header-banner h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* ================= WRAPPER ================= */
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 100px 40px;
+  background: linear-gradient(180deg, #ffffff, #f7f7f7);
+}
+
+/* ================= CARD ================= */
+.contact-card {
+  display: flex;
+  max-width: 1350px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+}
+
+/* ================= INFO PANEL ================= */
+.info-panel {
+  flex: 0.7;
+  background: linear-gradient(160deg, #0b0b0b, #1c1c1c);
+  color: #fff;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.info-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #cfcfcf;
+  margin-bottom: 45px;
+}
+
+/* Contact Links */
+.contact-links .link-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  transition: all 0.3s ease;
+}
+
+.contact-links .link-item:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateX(8px);
+}
+
+.contact-links i {
+  width: 22px;
+  color: #fff;
+}
+
+/* ================= MAP (LARGER & NATURAL) ================= */
+.map-container {
+  margin-top: auto;
+  height: 260px; /* Bigger than usual */
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ================= FORM PANEL ================= */
+.form-panel {
+  flex: 1.9;
+  padding: 70px 90px;
+}
+
+.form-intro h3 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.form-intro p {
+  color: #777;
+  margin-bottom: 45px;
+}
+
+/* ================= FORM GRID ================= */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px 35px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field.full {
+  grid-column: span 2;
+}
+
+.field label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.field input {
+  border: none;
+  border-bottom: 2px solid #eaeaea;
+  padding: 14px 2px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus {
+  border-bottom-color: #000;
+}
+
+/* Textarea */
+.field textarea {
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 22px;
+  font-size: 1rem;
+  min-height: 240px;
+  resize: vertical;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.field textarea:focus {
+  background: #fff;
+  border-color: #000;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* ================= CTA ================= */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #000, #333);
+  color: #fff;
+  padding: 20px 70px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+  transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.45);
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .contact-card {
+    flex-direction: column;
+  }
+
+  .form-panel {
+    padding: 50px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: span 1;
+  }
+}

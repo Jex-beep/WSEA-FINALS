@@ -67,7 +67,8 @@ export class BlogService {
         
         <p>With the right approach, Mabalacat City offers excellent opportunities to own a reliable secondhand car that fits your budget and lifestyle.</p>
       `
-    }
+    },
+    
   ];
 
   getBlogs() { return this.posts; }
