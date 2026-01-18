@@ -279,3 +279,134 @@
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* Mobayl */
+
+/* ============================================================
+   ABOUT PAGE MOBILE OPTIMIZATION (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* 1. Header Banner: Scaled for Mobile */
+  .header-banner {
+    padding: 60px 20px 80px;
+    border-bottom-left-radius: 50% 40px; /* Toned down curve */
+    border-bottom-right-radius: 50% 40px;
+  }
+
+  .header-banner h1 {
+    font-size: 2.2rem; /* Toned down from 3.5rem */
+    letter-spacing: 1px;
+  }
+
+  /* 2. Content Grid & Title */
+  .about-grid-section {
+    padding: 60px 24px;
+    text-align: center;
+  }
+
+  .about-flex-container {
+    flex-direction: column; /* Stack left and right sections */
+    gap: 40px;
+  }
+
+  .display-title {
+    font-size: 2.4rem; /* Toned down from 3.5rem */
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  /* 3. The 2x2 Feature Grid → Vertical Stack */
+  .feature-2x2 {
+    grid-template-columns: 1fr; /* Single column for readability */
+    gap: 30px;
+    text-align: left; /* Keep feature text left-aligned for standard reading */
+  }
+
+  .feature-title {
+    font-size: 1.1rem;
+    padding-left: 12px;
+  }
+
+  /* 4. About Hero Image */
+  .about-hero-image {
+    padding: 40px 20px;
+  }
+
+  .about-hero-image img {
+    max-width: 100%;
+    width: 100%; /* Full width on mobile */
+  }
+
+ /* 5. Stats Row: Single Row Optimized for Mobile */
+.stats-row {
+  padding: 40px 10px; /* Reduced side padding to give icons more room */
+  display: flex;
+  flex-direction: row; /* Forces items into one line */
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 5px; /* Minimal gap to maximize space for text */
+}
+
+.stat-item {
+  flex: 1; /* Ensures all 4 items take up equal space */
+  padding: 0 5px;
+}
+
+.stat-number {
+  font-size: 1.4rem; /* Toned down from 2rem to fit the row */
+  display: block;
+  font-weight: 900;
+}
+
+.stat-desc {
+  font-size: 0.65rem; /* Toned down from 1rem to prevent text wrapping */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+  /* 6. Reviews Section */
+  .reviews-section {
+    padding: 0px 24px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr; /* Full stack */
+    gap: 20px;
+  }
+
+  .review-card {
+    padding: 30px 24px;
+  }
+
+  .quote-icon {
+    font-size: 3rem;
+  }
+
+  /* 7. FAQ Section */
+  .faq-container {
+    padding: 60px 24px;
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Consistent with other mobile titles */
+  }
+
+  .accordion-header {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .accordion-content {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+}

@@ -164,3 +164,137 @@
   .footer-blueprint { grid-template-columns: 1fr; }
   .main-slogan { font-size: 2rem; }
 }
+
+
+@media (max-width: 768px) {
+
+  .main-footer {
+    padding: 60px 6% 20px;
+  }
+
+  /* Kill blueprint grid noise on mobile */
+  .main-footer::before {
+    opacity: 0.3;
+    background-size: 80px 80px;
+  }
+
+  .footer-blueprint {
+    grid-template-columns: 1fr;
+    gap: 18px
+  }
+
+  .blueprint-section {
+    position: relative;
+  }
+
+  .blueprint-section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(227,30,36,0.4),
+      transparent
+    );
+  }
+  /* ===== SPECS SECTION ===== */
+
+  .specs {
+    display: none;
+  }
+  /* .spec-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .spec-item {
+    border-left: 2px solid #e31e24;
+    padding-left: 12px;
+  } */
+
+  .logo-shield{
+    display: none;
+  }
+
+  .blueprint-coordinates {
+    display: none;
+  }
+
+  .blueprint-section{
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: #aaa;
+    padding: 16px;
+  }
+
+  /* ===== BRAND CORE ===== */
+ .brand-core {
+    padding: 8px 0 12px;
+  }
+  .glitch-logo {
+    height: 80px;
+  }
+
+
+ .main-slogan {
+    font-size: 1.6rem;
+    margin: 10px 0;
+    line-height: 1;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== COMMS ===== */
+  .comm-row {
+    padding: 8px 0;
+    gap: 4px;
+  }
+
+  .comm-value a {
+    display: inline-block;
+    padding: 6px 0;
+  }
+
+  .comm-label {
+    font-size: 0.7rem;
+  }
+
+  .comm-value {
+    font-size: 0.75rem;
+  }
+
+  /* Social buttons stack */
+  .social-blueprint {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 12px;
+  }
+
+ .meta-bar {
+    margin-top: 30px;
+    gap: 6px;
+    font-size: 0.6rem;
+  }
+
+  .bar-segment {
+    color: #666;            /* Boost contrast */
+  }
+
+  .bar-segment.right {
+    opacity: 0.6;
+  }
+}
+
+
+
