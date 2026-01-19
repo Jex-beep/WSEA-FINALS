@@ -86,15 +86,6 @@
   position: relative;
 }
 
-/* Sticky Social Sidebar */
-.share-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  position: sticky;
-  top: 120px; /* Keeps icons in view as user scrolls */
-  height: fit-content;
-}
 
 .circle-btn {
   width: 45px;

@@ -6,7 +6,15 @@
   </div>
 
   <div class="filter-container">
-    <div class="category-filters">
+    <div class="mobile-filter-trigger" (click)="toggleFilterMenu()">
+       <span class="active-label">Category: <strong>{{selectedCategory}}</strong></span>
+       <span class="filter-icon">▼</span>
+    </div>
+
+    <div class="category-filters" [class.mobile-open]="isFilterMenuOpen">
+      
+      <button class="close-filters" (click)="toggleFilterMenu()">✕</button>
+      
       <button class="filter-btn" 
               [class.active]="selectedCategory === 'All'" 
               (click)="filterCars('All')">
@@ -42,6 +50,12 @@
               (click)="filterCars('Micro')">
         <img src="/micro.png" alt="Micro" class="btn-icon"> Micro
       </button>
+
+      <button class="filter-btn" 
+              [class.active]="selectedCategory === 'Motor'" 
+              (click)="filterCars('Motor')">
+        <img src="/motor.png" alt="Motorcycle" class="btn-icon"> Motor
+      </button>
     </div>
   </div>
 
@@ -68,7 +82,7 @@
       </div>
     } @empty { 
       <div class="no-results">
-        <p>Currently no {{ selectedCategory }}s available. Please check back later!</p>
+        <p>Currently no {{ selectedCategory === 'Motor' ? 'Motorcycles' : selectedCategory + 's' }} available. Please check back later!</p>
       </div>
     }
   </div>
@@ -99,7 +113,7 @@
         Visit our yard in Mabalacat City for a test drive today! 
         We ensure every vehicle meets M&J standards.
       </p>
-      <button class="contact-btn">Contact the Owner</button>
+      <button class="contact-btn" routerLink="/contact">Contact Us Now!</button>
     </div>
 
     <div class="image-side">

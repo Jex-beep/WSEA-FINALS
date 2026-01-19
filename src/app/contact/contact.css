@@ -282,3 +282,105 @@
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
+@media (max-width: 768px) {
+  /* 1. Header Banner (As requested, keeping your toned-down scale) */
+  .header-banner {
+    padding: 60px 20px 80px;
+    border-bottom-left-radius: 50% 40px;
+    border-bottom-right-radius: 50% 40px;
+  }
+  .header-banner h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  /* 2. Wrapper: Reduce padding for more screen real estate */
+  .contact-wrapper {
+    padding: 40px 15px; /* Tighter margins for mobile */
+    background: #fdfdfd;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    border-radius: 30px; /* More elegant rounding */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  }
+
+  /* 3. Info Panel: Elegant dark section */
+  .info-panel {
+    padding: 40px 30px;
+    border-radius: 0; /* Let the card handle the rounding */
+  }
+
+  .info-text h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .info-text p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+  }
+
+  .contact-links {
+    gap: 20px;
+  }
+
+  .contact-links .link-item {
+    font-size: 0.9rem;
+  }
+
+  .map-container {
+    height: 200px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  /* 4. Form Panel: Clean & Spacious */
+  .form-panel {
+    padding: 40px 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Force single column */
+    gap: 25px;
+  }
+
+  .field.full {
+    grid-column: span 1;
+  }
+
+  .field label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .field textarea {
+    min-height: 150px;
+    padding: 15px;
+    /* Fixing the background color to be more readable */
+    background: #fff !important; 
+    border: 1px solid #ddd;
+  }
+
+  /* 5. Actions: Full width button is better for thumbs */
+  .actions {
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .submit-btn {
+    width: 100%; /* Easier to click on mobile */
+    padding: 18px;
+    font-size: 1.1rem;
+    border-radius: 15px;
+  }
+
+  /* 6. Popup Adjustments */
+  .modal-box {
+    padding: 30px 20px !important;
+    width: 85% !important;
+  }
+}

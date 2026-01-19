@@ -134,6 +134,117 @@
 }
 
 @media (max-width: 768px) {
-  .blog-grid { grid-template-columns: 1fr; gap: 30px; }
-  .header-banner h1 { font-size: 2.5rem; }
+  /* 1. Header Banner (Preserving your exact requested scale) */
+  .header-banner {
+    padding: 60px 20px 80px;
+    border-bottom-left-radius: 50% 40px; 
+    border-bottom-right-radius: 50% 40px;
+  }
+
+  /* 2. Blog Container: Background Refresh */
+  .blog-page {
+    background: linear-gradient(to bottom, #f4f4f7, #ffffff);
+  }
+
+  .blog-container {
+    margin: 20px auto 60px;
+    padding: 0 18px;
+  }
+
+  /* 3. The Elite Blog Card */
+  .blog-card {
+    border-radius: 32px;
+    padding: 0; /* Remove internal padding to let image bleed to top */
+    background: #ffffff;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    margin-bottom: 10px;
+  }
+
+  /* 4. Cinematic Image Container */
+  .card-image {
+    border-radius: 0; /* Flat top for modern look */
+    position: relative;
+    height: 220px;
+  }
+
+  /* Adding a soft gradient overlay so white text/icons pop if needed */
+  .card-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  }
+
+  /* 5. Refined Content Area */
+  .card-content {
+    padding: 25px 20px;
+    position: relative;
+  }
+
+  /* The "Luxury" Accent Line */
+  .card-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 4px;
+    height: 40px;
+    background: #610000; /* M&J Signature Red */
+    border-radius: 0 4px 4px 0;
+  }
+
+  .blog-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 15px;
+    padding-left: 10px; /* Space for the accent line */
+    letter-spacing: -0.5px;
+  }
+
+  /* 6. Magazine Style Meta Tags */
+  .blog-meta {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spaced out look */
+  }
+
+  .category {
+    background: rgba(97, 0, 0, 0.08) !important; /* Soft tinted background */
+    color: #610000 !important;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(97, 0, 0, 0.1);
+  }
+
+  .date {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* 7. Hover/Touch Effect */
+  .blog-card:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+  }
+}
+/* Extra small screens fix */
+@media (max-width: 480px) {
+  .blog-container {
+    padding: 0 15px;
+  }
+  .blog-title {
+    font-size: 1.2rem;
+  }
 }
