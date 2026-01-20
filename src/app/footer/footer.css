@@ -12,7 +12,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -167,12 +167,21 @@
 
 
 @media (max-width: 768px) {
+  /* Global reset for the footer elements to handle widths correctly */
+  .main-footer,
+  .main-footer *,
+  .main-footer *::before,
+  .main-footer *::after {
+    box-sizing: border-box;
+  }
 
   .main-footer {
     padding: 60px 6% 20px;
+    width: 100%;
+    overflow-x: hidden; /* Safety catch for horizontal scroll */
   }
 
-  /* Kill blueprint grid noise on mobile */
+  /* Blueprint Grid */
   .main-footer::before {
     opacity: 0.3;
     background-size: 80px 80px;
@@ -180,11 +189,17 @@
 
   .footer-blueprint {
     grid-template-columns: 1fr;
-    gap: 18px
+    gap: 18px;
+    width: 100%;
   }
 
   .blueprint-section {
     position: relative;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: #aaa;
+    padding: 16px;
+    width: 100%; /* Ensure section doesn't expand */
   }
 
   .blueprint-section:not(:last-child)::after {
@@ -201,100 +216,91 @@
       transparent
     );
   }
-  /* ===== SPECS SECTION ===== */
 
-  .specs {
-    display: none;
-  }
-  /* .spec-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .spec-item {
-    border-left: 2px solid #e31e24;
-    padding-left: 12px;
-  } */
-
-  .logo-shield{
+  /* Section Visibility */
+  .specs, .logo-shield, .blueprint-coordinates {
     display: none;
   }
 
-  .blueprint-coordinates {
-    display: none;
-  }
-
-  .blueprint-section{
-    font-size: 0.8rem;
-    line-height: 1.2;
-    color: #aaa;
-    padding: 16px;
-  }
-
-  /* ===== BRAND CORE ===== */
- .brand-core {
+  /* Brand Core */
+  .brand-core {
     padding: 8px 0 12px;
+    text-align: center;
   }
+
   .glitch-logo {
     height: 80px;
   }
 
-
- .main-slogan {
+  .main-slogan {
     font-size: 1.6rem;
     margin: 10px 0;
     line-height: 1;
     letter-spacing: 0.5px;
   }
 
-  /* ===== COMMS ===== */
+  /* Comms & Social Blueprint Fix */
+  .comms {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .comm-box {
+    width: 100%;
+  }
+
   .comm-row {
     padding: 8px 0;
     gap: 4px;
-  }
-
-  .comm-value a {
-    display: inline-block;
-    padding: 6px 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows long emails to wrap if needed */
   }
 
   .comm-label {
     font-size: 0.7rem;
+    flex-shrink: 0;
   }
 
   .comm-value {
     font-size: 0.75rem;
+    word-break: break-all; /* Prevents long emails from breaking container */
   }
 
-  /* Social buttons stack */
   .social-blueprint {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
+    width: 100%; /* Forces container to stay within parent */
   }
 
   .btn-outline {
-    width: 100%;
+    display: block;
+    width: 100%; /* Fits exactly to social-blueprint width */
     text-align: center;
     margin: 0;
     padding: 12px;
+    min-width: 0; /* Important: overrides default flex min-width */
   }
 
- .meta-bar {
+  /* Meta Bar */
+  .meta-bar {
     margin-top: 30px;
-    gap: 6px;
+    gap: 10px;
     font-size: 0.6rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .bar-segment {
-    color: #666;            /* Boost contrast */
+    color: #666;
   }
 
   .bar-segment.right {
     opacity: 0.6;
   }
 }
-
 
 
